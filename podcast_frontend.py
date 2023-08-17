@@ -4,7 +4,7 @@ import json
 import os
 
 def main():
-    st.title("Podcast of the Day")
+    st.title("Benny's Podcasts")
 
     available_podcast_info = create_dict_from_json_files('.')
 
@@ -12,7 +12,7 @@ def main():
     st.sidebar.header("Podcast RSS Feeds")
 
     # Dropdown box
-    st.sidebar.subheader("Available Podcasts Feeds")
+    st.sidebar.subheader("Our Favorites")
     selected_podcast = st.sidebar.selectbox("Select Podcast", options=available_podcast_info.keys())
 
     if selected_podcast:
@@ -23,8 +23,8 @@ def main():
         st.header("Newsletter Content")
 
         # Display the podcast title
-        st.subheader("Episode Title")
-        st.write(podcast_info['podcast_details']['episode_title'])
+        st.subheader(podcast_info['podcast_details']['episode_title'])
+        st.write("from " + selected_podcast)
 
         # Display the podcast summary and the cover image in a side-by-side layout
         col1, col2 = st.columns([7, 3])
