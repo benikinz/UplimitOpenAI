@@ -106,7 +106,7 @@ def main():
 def create_dict_from_json_files(folder_path):
     json_files = [f for f in os.listdir(folder_path) if f.endswith('.json')]
     data_dict = {}
-
+    json_files.reverse()
     for file_name in json_files:
         file_path = os.path.join(folder_path, file_name)
         with open(file_path, 'r') as file:
