@@ -24,16 +24,14 @@ def main():
     <style>
         body {
             background-color: #1f1f1f;
-            color: #f0f0f0;
+            color: #ffffff; /* Set text color to white */
         }
         .stApp {
             background-color: #1f1f1f;
         }
         .sidebar .sidebar-content {
             background-color: #333333;
-        }
-        .css-hby737, .css-qbe2hs {
-            color: #f0f0f0;
+            color: #ffffff; /* Set text color to white in the sidebar */
         }
     </style>
     """
