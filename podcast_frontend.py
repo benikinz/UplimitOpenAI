@@ -10,8 +10,8 @@ def main():
 
     # Create a custom header with the background image
     header_html = f"""
-   <div style="background-image: url('{background_image_url}'); background-size: cover; background-repeat: no-repeat; color: white; padding: 20px; font-size: 30px; text-align: center; height: 150px; width: 100%;">
-         
+   <div style="background-image: url('{background_image_url}'); background-size: cover; background-repeat: no-repeat; color: white; padding: 20px; font-size: 30px; text-align: center; height: 200px; width: 200%;">
+         Benny's Podcasts
     </div>
     """
     
@@ -24,7 +24,7 @@ def main():
 
 
     
-    st.title("Benny's Podcasts")
+    # st.title("Benny's Podcasts")
 
     available_podcast_info = create_dict_from_json_files('.')
 
