@@ -11,7 +11,7 @@ def main():
     # Create a custom header with the background image
     header_html = f"""
     <div style="background-image: url('{background_image_url}'); background-size: cover; color: white; padding: 15px; font-size: 30px; text-align: center;">
-        Benny's Podcasts
+        Background by DALL·E 2
     </div>
     """
     
