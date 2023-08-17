@@ -14,10 +14,10 @@ def main():
          
     </div>
     """
-    st.markdown("Background by DALL·E 2")
+    
     # Use the `st.markdown` method to render the HTML
     st.markdown(header_html, unsafe_allow_html=True)
-
+    st.markdown("Background by DALL·E 2")
 
 
 
