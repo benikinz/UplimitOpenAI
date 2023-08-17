@@ -6,7 +6,7 @@ import os
 def main():
     
     
-    background_image_url = "https://c1.wallpaperflare.com/preview/860/864/869/sunset-outdoor-tree-background.jpg"
+    background_image_url = "https://oaidalleapiprodscus.blob.core.windows.net/private/org-xAcx2hRn6fPSUBTjqXxrTV7S/user-2dDRPrUmKcI75xLvAOsTk12c/img-xZ0bNWhE6462QRCxS34k1UIC.png?st=2023-08-17T21%3A05%3A42Z&se=2023-08-17T23%3A05%3A42Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-08-17T17%3A52%3A03Z&ske=2023-08-18T17%3A52%3A03Z&sks=b&skv=2021-08-06&sig=FK4tMXX1Jp2kq338QMCnVkQQhs7JayBT1jhNGh8Ea2A%3D"
     
     # Create a custom header with the background image
     header_html = f"""
