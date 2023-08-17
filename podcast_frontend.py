@@ -10,7 +10,7 @@ def main():
     
     # Create a custom header with the background image
     header_html = f"""
-    <div style="background-image: url('{background_image_url}'); background-size: cover; background-repeat: no-repeat; color: white; padding: 20px; font-size: 40px; text-align: center; height: 200px; width: 100%; display: flex; align-items: center; justify-content: center;">
+    <div style="background-image: url('{background_image_url}'); background-size: cover; background-repeat: no-repeat; color: white; padding: 20px; font-size: 60px; text-align: center; height: 200px; width: 100%; display: flex; align-items: center; justify-content: center;">
         Benny's Podcasts
     </div>
     """
