@@ -4,6 +4,26 @@ import json
 import os
 
 def main():
+
+
+    background_image_url = "https://c1.wallpaperflare.com/preview/860/864/869/sunset-outdoor-tree-background.jpg"
+
+    # Create a custom header with the background image
+    header_html = f"""
+    <div style="background-image: url('{background_image_url}'); background-size: cover; color: white; padding: 15px; font-size: 30px; text-align: center;">
+        Benny's Podcasts
+    </div>
+    """
+    
+    # Use the `st.markdown` method to render the HTML
+    st.markdown(header_html, unsafe_allow_html=True)
+
+
+
+
+
+
+    
     st.title("Benny's Podcasts")
 
     available_podcast_info = create_dict_from_json_files('.')
