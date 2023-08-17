@@ -20,7 +20,24 @@ def main():
     st.markdown("Background by DALL·E 2")
 
 
-
+    dark_theme_css = """
+    <style>
+        body {
+            background-color: #1f1f1f;
+            color: #f0f0f0;
+        }
+        .stApp {
+            background-color: #1f1f1f;
+        }
+        .sidebar .sidebar-content {
+            background-color: #333333;
+        }
+        .css-hby737, .css-qbe2hs {
+            color: #f0f0f0;
+        }
+    </style>
+    """
+    st.markdown(dark_theme_css, unsafe_allow_html=True)
 
 
     
