@@ -24,7 +24,7 @@ def main():
 
         # Display the podcast title
         st.subheader(podcast_info['podcast_details']['episode_title'])
-        st.write("from " + selected_podcast)
+        st.write(selected_podcast)
 
         # Display the podcast summary and the cover image in a side-by-side layout
         col1, col2 = st.columns([7, 3])
