@@ -25,21 +25,25 @@ def main():
 
     ######1
     # URL of the background image
-    app_background_image_url = "https://media.istockphoto.com/id/1095382880/photo/white-or-gray-ceramic-wall-and-floor-tiles-abstract-background.webp?b=1&s=170667a&w=0&k=20&c=e6NDHcggvOYJS1zS7i5_iXcY6hEVrAbAoDQZpE-7b8Y="
+    # URL of the repeating background image
+    repeating_background_image_url = "https://media.istockphoto.com/id/1095382880/photo/white-or-gray-ceramic-wall-and-floor-tiles-abstract-background.webp?b=1&s=170667a&w=0&k=20&c=e6NDHcggvOYJS1zS7i5_iXcY6hEVrAbAoDQZpE-7b8Y="
     
-    # Custom CSS for the entire app
-    app_background_css = f"""
-    <style>
-    body {{
-        background-image: url('{app_background_image_url}');
-        background-size: auto; 
-        background-repeat: repeat;
-    }}
+    # Start the custom div
+    st.markdown(f"""<style>
+        .repeating-bg {{
+            background-image: url('{repeating_background_image_url}');
+            background-size: auto;
+            background-repeat: repeat;
+            padding: 15px;
+        }}
     </style>
-    """
+    <div class="repeating-bg">""", unsafe_allow_html=True)
     
-    # Use the `st.markdown` method to render the custom CSS
-    st.markdown(app_background_css, unsafe_allow_html=True)
+    # ... rest of the code here ...
+    
+    # End the custom div at the end of the main function
+    st.markdown("</div>", unsafe_allow_html=True)
+
     ######2
     
     # st.title("Benny's Podcasts")
