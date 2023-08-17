@@ -11,10 +11,10 @@ def main():
     # Create a custom header with the background image
     header_html = f"""
    <div style="background-image: url('{background_image_url}'); background-size: cover; background-repeat: no-repeat; color: white; padding: 20px; font-size: 30px; text-align: center; height: 150px; width: 100%;">
-         Background by DALL·E 2
+         
     </div>
     """
-    
+    st.markdown("Background by DALL·E 2")
     # Use the `st.markdown` method to render the HTML
     st.markdown(header_html, unsafe_allow_html=True)
 
