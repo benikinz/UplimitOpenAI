@@ -4,23 +4,22 @@ import json
 import os
 
 def main():
-
-
+    
+    
     background_image_url = "https://c1.wallpaperflare.com/preview/860/864/869/sunset-outdoor-tree-background.jpg"
     
     # Create a custom header with the background image
     header_html = f"""
-    <div style="background-image: url('{background_image_url}'); background-size: cover; background-repeat: no-repeat; color: white; padding: 20px; font-size: 60px; text-align: center; height: 200px; width: 100%; display: flex; align-items: center; justify-content: center;">
-        Benny's Podcasts
+    <div style="background-image: url('{background_image_url}'); background-size: cover; background-repeat: no-repeat; padding: 20px; text-align: center; height: 200px; width: 100%; display: flex; align-items: center; justify-content: center;">
+        <span style="color: white; font-size: 40px; font-weight: bold; text-shadow: 2px 2px 4px #000000;">
+            Benny's Podcasts
+        </span>
     </div>
     """
     
     # Use the `st.markdown` method to render the HTML
- 
-
-    
-    # Use the `st.markdown` method to render the HTML
     st.markdown(header_html, unsafe_allow_html=True)
+
     st.markdown("Background by DALL·E 2")
 
 
