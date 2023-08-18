@@ -44,7 +44,7 @@ def main():
         podcast_info = available_podcast_info[selected_podcast]
         background_image_url = podcast_info.get('podcast_dalle', {}).get('image_url', 'default_image_url')
 
-        st.subheader(f"All fields: {', '.join(podcast_info['podcast_details'].keys())}")
+        
 
 
         # Create a custom header with the background image
