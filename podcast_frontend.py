@@ -1,3 +1,5 @@
+##this works and shows both in same but stacked on top of each other
+
 import streamlit as st
 import modal
 import json
@@ -39,19 +41,8 @@ def main():
     # Dropdown box
     st.sidebar.subheader("Our Favorites")
     selected_podcast = st.sidebar.selectbox("Select Podcast", options=available_podcast_info.keys())
-    # User Input box
-    st.sidebar.subheader("Add and Process New Podcast Feed")
-    url = st.sidebar.text_input("Link to RSS Feed")
 
-    process_button = st.sidebar.button("Process Podcast Feed")
-    st.sidebar.markdown("**Note**: Podcast processing can take up to 6 mins, please bear with us.")
-    if process_button or selected_podcast:
-        podcast_info = {}
-        if process_button:
-            podcast_info = process_podcast_info(url)
-        else:  
-            podcast_info = available_podcast_info[selected_podcast]
-
+    if selected_podcast:
 
         podcast_info = available_podcast_info[selected_podcast]
         background_image_url = podcast_info.get('podcast_dalle', {}).get('image_url', 'default_image_url')
@@ -107,9 +98,53 @@ def main():
             st.markdown(
                 f"<p style='margin-bottom: 5px;'>{moment}</p>", unsafe_allow_html=True)
 
-    
+    # User Input box
+    st.sidebar.subheader("Add and Process New Podcast Feed")
+    url = st.sidebar.text_input("Link to RSS Feed")
 
-    
+    process_button = st.sidebar.button("Process Podcast Feed")
+    st.sidebar.markdown("**Note**: Podcast processing can take up to 6 mins, please bear with us.")
+
+    if process_button:
+
+        # Call the function to process the URLs and retrieve podcast guest information
+        podcast_info = process_podcast_info(url)
+
+        # Right section - Newsletter content
+        st.header("Newsletter Content")
+
+        # Display the podcast title
+        st.subheader("Episode Title")
+        st.write(podcast_info['podcast_details']['episode_title'])
+
+        # Display the podcast summary and the cover image in a side-by-side layout
+        col1, col2 = st.columns([7, 3])
+
+        with col1:
+            # Display the podcast episode summary
+            st.subheader("Podcast Episode Summary")
+            st.write(podcast_info['podcast_summary'])
+
+        with col2:
+            st.image(podcast_info['podcast_details']['episode_image'], caption="Podcast Cover", width=300, use_column_width=True)
+
+        # Display the podcast guest and their details in a side-by-side layout
+        col3, col4 = st.columns([3, 7])
+
+        with col3:
+            st.subheader("Podcast Guest")
+            st.write(podcast_info['podcast_guest']['name'])
+
+        with col4:
+            st.subheader("Podcast Guest Details")
+            st.write(podcast_info["podcast_guest"]['summary'])
+
+        # Display the five key moments
+        st.subheader("Key Moments")
+        key_moments = podcast_info['podcast_highlights']
+        for moment in key_moments.split('\n'):
+            st.markdown(
+                f"<p style='margin-bottom: 5px;'>{moment}</p>", unsafe_allow_html=True)
 
 def create_dict_from_json_files(folder_path):
     json_files = [f for f in os.listdir(folder_path) if f.endswith('.json')]
