@@ -50,7 +50,7 @@ def main():
 
         # Create a custom header with the background image
         header_html = f"""
-        <div id="dallepic"style="background-image: url('{background_image_url}'); background-size: cover; background-repeat: no-repeat; padding: 20px; text-align: center; height: 200px; width: 100%; display: flex; align-items: center; justify-content: center;">
+        <div id="dallepic"style="background-image: url('{background_image_url}'); background-size: cover; background-repeat: no-repeat; padding: 20px; text-align: center; height: 100%; width: 100%; display: flex; align-items: center; justify-content: center;">
             <span style="color: white; font-size: 60px; font-weight: bold; text-shadow: 2px 2px 4px #000000;">
                 Benny's Podcasts
             </span>
