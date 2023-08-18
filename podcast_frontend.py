@@ -109,7 +109,11 @@ def main():
 
         # Call the function to process the URLs and retrieve podcast guest information
         podcast_info = process_podcast_info(url)
-        st.markdown("<hr style='border:2px solid black'>", unsafe_allow_html=True)
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
 
         background_image_url = podcast_info.get('podcast_dalle', {}).get('image_url', 'default_image_url')
 
