@@ -110,12 +110,29 @@ def main():
         # Call the function to process the URLs and retrieve podcast guest information
         podcast_info = process_podcast_info(url)
 
+        background_image_url = podcast_info.get('podcast_dalle', {}).get('image_url', 'default_image_url')
+
+        
+
+
+        # Create a custom header with the background image
+        header_html = f"""
+        <div id="dallepic"style="background-image: url('{background_image_url}'); background-size: cover; background-repeat: no-repeat; padding: 20px; text-align: center; height: 500px; width: 100%; display: flex; align-items: center; justify-content: center;">
+            <span style="color: white; font-size: 60px; font-weight: bold; text-shadow: 2px 2px 4px #000000;">
+                Benny's Podcasts
+            </span>
+        </div>
+        """
+    
+        # Use the `st.markdown` method to render the HTML
+        st.markdown(header_html, unsafe_allow_html=True)
+        st.markdown("Background by DALL·E 2")
         # Right section - Newsletter content
-        st.header("Newsletter Content")
+        st.header(podcast_info['podcast_details']['episode_title'])
 
         # Display the podcast title
-        st.subheader("Episode Title")
-        st.write(podcast_info['podcast_details']['episode_title'])
+        st.subheader(selected_podcast)
+        st.write()
 
         # Display the podcast summary and the cover image in a side-by-side layout
         col1, col2 = st.columns([7, 3])
