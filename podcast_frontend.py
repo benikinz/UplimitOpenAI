@@ -42,7 +42,8 @@ def main():
     if selected_podcast:
 
         podcast_info = available_podcast_info[selected_podcast]
-        background_image_url = podcast_info['podcast_details']['podcast_dalle']
+        background_image_url = podcast_info['podcast_details'].get('podcast_dalle', 'default_image_url')
+
 
         # Create a custom header with the background image
         header_html = f"""
