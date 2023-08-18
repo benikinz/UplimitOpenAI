@@ -74,7 +74,7 @@ def main():
 
         with col1:
             # Display the podcast episode summary
-            st.subheader("Podcast Episode Summary")
+            st.subheader("Summary")
             st.write(podcast_info['podcast_summary'])
 
         with col2:
@@ -109,6 +109,7 @@ def main():
 
         # Call the function to process the URLs and retrieve podcast guest information
         podcast_info = process_podcast_info(url)
+        st.markdown("<hr style='border:2px solid black'>", unsafe_allow_html=True)
 
         background_image_url = podcast_info.get('podcast_dalle', {}).get('image_url', 'default_image_url')
 
@@ -129,9 +130,9 @@ def main():
         st.markdown("Background by DALL·E 2")
         # Right section - Newsletter content
         st.header(podcast_info['podcast_details']['episode_title'])
-
+        #podcast_title
         # Display the podcast title
-        st.subheader(selected_podcast)
+        st.subheader(podcast_info['podcast_details']['podcast_title'])
         st.write()
 
         # Display the podcast summary and the cover image in a side-by-side layout
@@ -139,11 +140,11 @@ def main():
 
         with col1:
             # Display the podcast episode summary
-            st.subheader("Podcast Episode Summary")
+            st.subheader("Summary")
             st.write(podcast_info['podcast_summary'])
 
         with col2:
-            st.image(podcast_info['podcast_details']['episode_image'], caption="Podcast Cover", width=300, use_column_width=True)
+            st.image(podcast_info['podcast_details']['episode_image'], caption=podcast_info['podcast_details']['podcast_title'], width=300, use_column_width=True)
 
         # Display the podcast guest and their details in a side-by-side layout
         col3, col4 = st.columns([3, 7])
