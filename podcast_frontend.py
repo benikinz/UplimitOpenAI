@@ -18,9 +18,9 @@ def main():
     """
     
     # Use the `st.markdown` method to render the HTML
-    st.markdown(header_html, unsafe_allow_html=True)
+    #st.markdown(header_html, unsafe_allow_html=True)
 
-    st.markdown("Background by DALL·E 2")
+    
 
 
     ######1
@@ -58,6 +58,7 @@ def main():
     
         # Use the `st.markdown` method to render the HTML
         st.markdown(header_html, unsafe_allow_html=True)
+        st.markdown("Background by DALL·E 2")
         # Right section - Newsletter content
         st.header(podcast_info['podcast_details']['episode_title'])
 
