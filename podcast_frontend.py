@@ -10,7 +10,7 @@ def main():
     
     # Create a custom header with the background image
     header_html = f"""
-    <div style="background-image: url('{background_image_url}'); background-size: cover; background-repeat: no-repeat; padding: 20px; text-align: center; height: 200px; width: 100%; display: flex; align-items: center; justify-content: center;">
+    <div id="dallepic"style="background-image: url('{background_image_url}'); background-size: cover; background-repeat: no-repeat; padding: 20px; text-align: center; height: 200px; width: 100%; display: flex; align-items: center; justify-content: center;">
         <span style="color: white; font-size: 60px; font-weight: bold; text-shadow: 2px 2px 4px #000000;">
             Benny's Podcasts
         </span>
@@ -42,7 +42,19 @@ def main():
     if selected_podcast:
 
         podcast_info = available_podcast_info[selected_podcast]
+        background_image_url = podcast_info['podcast_details']['podcast_dalle']
 
+        # Create a custom header with the background image
+        header_html = f"""
+        <div id="dallepic"style="background-image: url('{background_image_url}'); background-size: cover; background-repeat: no-repeat; padding: 20px; text-align: center; height: 200px; width: 100%; display: flex; align-items: center; justify-content: center;">
+            <span style="color: white; font-size: 60px; font-weight: bold; text-shadow: 2px 2px 4px #000000;">
+                Benny's Podcasts
+            </span>
+        </div>
+        """
+    
+        # Use the `st.markdown` method to render the HTML
+        st.markdown(header_html, unsafe_allow_html=True)
         # Right section - Newsletter content
         st.header(podcast_info['podcast_details']['episode_title'])
 
